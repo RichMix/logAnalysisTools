@@ -1,0 +1,24 @@
+# NCL 2024 Gym Log Analysis
+
+# squid_access.log
+# In what year was this log saved?
+# Take any of the Epoch timestamps and convert them into a human-readable date. An online tool, such as Epoch Converter, can be used to do this.
+
+# How many milliseconds did the fastest request take?
+cat squid_access.log | awk '{print $2}' | sort -n
+#Extract the second field (the response time) and then sort the results numerically
+
+
+# How many different IP addresses did the proxy service in this log?
+cat squid_access.log | awk '{print $3}' | sort | uniq | wc -l
+#Extract the third field (the IP address of the proxy client), sort, get the unique values, and then get the line count
+
+# How many GET requests were made?
+cat squid_access.log | awk '{print $6}' | sort | uniq –c
+# Extract the 6th field (the HTTP Request type), sort, and then get the unique values with a count of their occurrences
+
+
+#  What company created the antivirus used on the host at 192.168.0.224?
+# -> The name of the company is found within the URLs of the requests made 192.168.0.224 
+cat squid_access.log | grep "192.168.0.224"
+# Search for any lines that contain the IP address from the question. 
