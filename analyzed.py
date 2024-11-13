@@ -1,8 +1,5 @@
-analyzed.py
+# analyzed.py
 
-
-
-Copy code
 # First, let's check the filename of the uploaded file to see if it contains any useful information
 # since the challenge hints that the filename might give a clue.
 
